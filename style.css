@@ -1,99 +1,198 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-#home {
+    background: linear-gradient(rgba(0, 53, 107, 0.95), rgba(0, 53, 107, 0.95)),
+      url("https://images.unsplash.com/photo-1574786187332-23e8c30aacb4?auto=format&fit=crop&q=80");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 10rem 2rem;
+    color: white;
+    position: relative;
+  }
+
+  .hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .yale-logo {
+    font-family: "Times New Roman", serif;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #ffd900;
+  }
+
+  h1 {
+    color: white;
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+  }
+
+  .motto {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .latin {
+    font-family: "Times New Roman", serif;
+    font-size: 1.8rem;
+    color: #ffd900;
+    letter-spacing: 3px;
+  }
+
+  .english {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    opacity: 0.9;
+  }
+
+  .hero-details {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+  }
+
+  .separator {
+    margin: 0 1rem;
+    color: #ffd900;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    padding: 1rem 2.5rem;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .primary-btn {
+    background-color: #ffd900;
+    color: #00356b;
+    border: none;
+  }
+
+  .secondary-btn {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .primary-btn:hover {
+    background-color: #ffe434;
+    transform: translateY(-2px);
+  }
+
+  .secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
 }
 
 header {
-    background-color: #00356b;
-    padding: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #00356b;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 0 auto;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 nav ul li {
-    margin: 0 2rem;
+  margin: 0 2rem;
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
 }
 
 nav ul li a:hover {
-    color: #ffd900;
+  color: #ffd900;
 }
 
 section {
-    padding: 4rem 2rem;
+  padding: 4rem 2rem;
 }
 
 #home {
-    background-color: #00356b;
-    text-align: center;
-    padding: 8rem 2rem;
-    color: white;
+  background-color: #00356b;
+  text-align: center;
+  padding: 8rem 2rem;
+  color: white;
 }
 
 h1 {
-    color: white;
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
+  color: white;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 h2 {
-    color: #00356b;
-    margin-bottom: 2rem;
-    text-align: center;
-    font-size: 2.2rem;
+  color: #00356b;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2.2rem;
 }
 
 .program-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
 }
 
 .program {
-    background-color: #f4f4f4;
-    padding: 2rem;
-    border-radius: 5px;
+  background-color: #f4f4f4;
+  padding: 2rem;
+  border-radius: 5px;
 }
 
 .program h3 {
-    color: #003366;
-    margin-bottom: 1rem;
+  color: #003366;
+  margin-bottom: 1rem;
 }
 
 .campus-info,
 .cost-info,
 .alumni-stories {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 footer {
-    background-color: #003366;
-    color: white;
-    text-align: center;
-    padding: 2rem;
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 2rem;
 }
