@@ -1,106 +1,125 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-#home {
-    background: linear-gradient(rgba(0, 53, 107, 0.95), rgba(0, 53, 107, 0.95)),
-      url("https://images.unsplash.com/photo-1574786187332-23e8c30aacb4?auto=format&fit=crop&q=80");
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    padding: 10rem 2rem;
-    color: white;
-    position: relative;
-  }
+:root {
+  --yale-blue: #00356b;
+  --yale-gold: #ffd900;
+  --yale-gold-light: #ffe434;
+  --white: #ffffff;
+  --light-gray: #f8f9fa;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --border-radius: 8px;
+}
 
-  .hero-content {
-    max-width: 900px;
-    margin: 0 auto;
-  }
+body {
+  font-family: "Inter", Arial, sans-serif;
+  line-height: 1.6;
+  padding-top: 76px;
+}
 
-  .yale-logo {
-    font-family: "Times New Roman", serif;
-    font-size: 4rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    color: #ffd900;
-  }
+.bg-yale {
+  background-color: var(--yale-blue) !important;
+}
 
-  h1 {
-    color: white;
-    font-size: 4.5rem;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
-    letter-spacing: -1px;
-  }
+#home {
+  background: linear-gradient(rgba(0, 53, 107, 0.95), rgba(0, 53, 107, 0.95)),
+    url("https://images.unsplash.com/photo-1574786187332-23e8c30aacb4?auto=format&fit=crop&q=80");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 10rem 2rem;
+  color: white;
+  position: relative;
+}
 
-  .motto {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 2rem;
-  }
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
 
-  .latin {
-    font-family: "Times New Roman", serif;
-    font-size: 1.8rem;
-    color: #ffd900;
-    letter-spacing: 3px;
-  }
+.yale-logo {
+  font-family: "Times New Roman", serif;
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #ffd900;
+}
 
-  .english {
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-    opacity: 0.9;
-  }
+h1 {
+  color: white;
+  font-size: 4.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
 
-  .hero-details {
-    font-size: 1.1rem;
-    margin-bottom: 3rem;
-  }
+.motto {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
 
-  .separator {
-    margin: 0 1rem;
-    color: #ffd900;
-  }
+.latin {
+  font-family: "Times New Roman", serif;
+  font-size: 1.8rem;
+  color: #ffd900;
+  letter-spacing: 3px;
+}
 
-  .hero-cta {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    margin-top: 2rem;
-  }
+.english {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  opacity: 0.9;
+}
 
-  .primary-btn,
-  .secondary-btn {
-    padding: 1rem 2.5rem;
-    border-radius: 4px;
-    font-size: 1.1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
+.hero-details {
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
 
-  .primary-btn {
-    background-color: #ffd900;
-    color: #00356b;
-    border: none;
-  }
+.separator {
+  margin: 0 1rem;
+  color: #ffd900;
+}
 
-  .secondary-btn {
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-  }
+.hero-cta {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
 
-  .primary-btn:hover {
-    background-color: #ffe434;
-    transform: translateY(-2px);
-  }
+.primary-btn,
+.secondary-btn {
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-  .secondary-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
-  }
+.primary-btn {
+  background-color: #ffd900;
+  color: #00356b;
+  border: none;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.primary-btn:hover {
+  background-color: #ffe434;
+  transform: translateY(-2px);
+}
+
+.secondary-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
 
 body {
