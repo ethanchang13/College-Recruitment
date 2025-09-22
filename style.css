@@ -15,10 +15,41 @@ body {
   font-family: "Inter", Arial, sans-serif;
   line-height: 1.6;
   padding-top: 76px;
+  color: #0f172a;
+  background: #f7f9fc;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 76px; /* fixed navbar offset */
 }
 
 .bg-yale {
   background-color: var(--yale-blue) !important;
+}
+
+/* Navbar on-scroll behavior and polish */
+.navbar.scrolled {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  background-color: rgba(0, 53, 107, 0.98) !important;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar .yale-nav-logo {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--yale-gold), var(--yale-gold-light));
+  color: var(--yale-blue);
+  font-weight: 800;
+}
+
+.theme-toggle {
+  border-radius: 999px;
+  padding: 0.35rem 0.6rem;
+  line-height: 1;
 }
 
 #home {
@@ -243,6 +274,7 @@ h1 {
       transparent,
       rgba(255, 255, 255, 0.4),
       transparent);
+  background-clip: text;
   transition: left 0.5s ease;
 }
 
@@ -706,6 +738,7 @@ h2::after {
       var(--yale-blue) 0%,
       var(--yale-gold) 30%,
       var(--yale-blue) 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
@@ -850,6 +883,133 @@ footer {
   padding: 5rem 0 3rem;
   position: relative;
   overflow: hidden;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg,
+      var(--yale-gold),
+      var(--yale-blue),
+      var(--yale-gold));
+}
+
+footer h5 {
+  color: var(--yale-gold);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+footer p,
+footer li {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+footer a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--yale-gold);
+  transform: translateX(2px);
+}footer h5 {
+  color: var(--yale-gold);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+footer p,
+footer li {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+footer a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--yale-gold);
+  transform: translateX(2px);
+}
+
+/* Minimal dark theme overrides */
+:root.dark body {
+  background: #0b1220;
+  color: #e5eaf3;
+}
+
+:root.dark section {
+  background: #10192e;
+}
+
+:root.dark .card,
+:root.dark .stats-card {
+  background: #0f1a2b;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+:root.dark .card-title,
+:root.dark h2,
+:root.dark .stat-label {
+  color: #e5eaf3;
+}
+
+:root.dark .card-text,
+:root.dark .list-unstyled li,
+:root.dark footer p,
+:root.dark footer li {
+  color: #cbd5e1;
+}
+
+:root.dark .program-filter .btn-group {
+  background: #0f1a2b;
+  border-color: rgba(148, 163, 184, 0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+:root.dark .btn-outline-primary {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+:root.dark .btn-outline-primary:hover {
+  background: #ffffff;
+  color: var(--yale-blue);
+}
+
+:root.dark .navbar.scrolled {
+  background-color: rgba(8, 15, 30, 0.98) !important;
+}
+
+/* Better focus visibility */
+:where(a, button, .btn):focus-visible {
+  outline: 3px solid var(--yale-gold);
+  outline-offset: 2px;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* Smooth theme transitions */
+html, body, section, .card, .stats-card, footer, .program-filter .btn-group {
+  transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 }
 
 footer::before {
