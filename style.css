@@ -993,6 +993,25 @@ footer a:hover {
   background-color: rgba(8, 15, 30, 0.98) !important;
 }
 
+/* Improve dark mode contrast*/
+:root.dark .list-unstyled i {
+  color: var(--yale-gold);
+}
+
+:root.dark h3,
+:root.dark h4,
+:root.dark h5,
+:root.dark .card-title,
+:root.dark .stat-label {
+  color: #e5eaf3;
+}
+
+:root.dark .stat-number {
+  background: linear-gradient(135deg, #7fb3ff 0%, var(--yale-gold) 35%, #7fb3ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
 /* Better focus visibility */
 :where(a, button, .btn):focus-visible {
   outline: 3px solid var(--yale-gold);
