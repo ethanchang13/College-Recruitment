@@ -28,6 +28,13 @@ html {
   background-color: var(--yale-blue) !important;
 }
 
+
+/* Keep number block width stable during counting */
+.text-center .stat-number {
+  display: inline-block;
+  min-width: 6ch; /* supports up to 6 characters like 75,000% */
+  text-align: center;
+}
 /* Navbar on-scroll behavior and polish */
 .navbar.scrolled {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
@@ -734,6 +741,10 @@ h2::after {
   color: var(--yale-blue);
   line-height: 1;
   margin-bottom: 1.5rem;
+  font-variant-numeric: tabular-nums;
+  -moz-font-feature-settings: "tnum" 1;
+  -webkit-font-feature-settings: "tnum" 1;
+  font-feature-settings: "tnum" 1;
   background: linear-gradient(135deg,
       var(--yale-blue) 0%,
       var(--yale-gold) 30%,

@@ -8,6 +8,9 @@
         content="Yale University - Discover world-class education, cutting-edge research, and a legacy of leadership in New Haven, Connecticut.">
     <meta name="keywords" content="Yale University, college, education, Ivy League, New Haven">
     <title>Yale University - Light and Truth Since 1701</title>
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#00356b">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b1220">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -23,7 +26,7 @@
                 <a class="navbar-brand" href="#home">
                     <span class="yale-nav-logo">Y</span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation" aria-controls="navbarNav" aria-expanded="false">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -33,6 +36,12 @@
                         <li class="nav-item"><a class="nav-link" href="#student-life">Student Life</a></li>
                         <li class="nav-item"><a class="nav-link" href="#costs">Admissions & Aid</a></li>
                         <li class="nav-item"><a class="nav-link" href="#alumni">Alumni</a></li>
+                        <li class="nav-item d-flex align-items-center ms-lg-3">
+                            <button id="themeToggle" type="button" class="btn btn-outline-light btn-sm theme-toggle" aria-label="Toggle color theme" title="Toggle theme">
+                                <i class="bi bi-moon-stars" aria-hidden="true"></i>
+                                <span class="visually-hidden">Toggle theme</span>
+                            </button>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -53,11 +62,11 @@
                     <span>New Haven, Connecticut</span>
                 </div>
                 <div class="hero-cta">
-                    <button class="btn btn-yale hero-btn" data-text="Explore Yale">
+                    <button id="exploreBtn" class="btn btn-yale hero-btn" data-text="Explore Yale" aria-label="Explore Yale programs">
                         <span class="btn-text">Explore Yale</span>
                         <i class="bi bi-compass"></i>
                     </button>
-                    <button class="btn btn-yale-outline hero-btn" data-text="Apply Now">
+                    <button id="applyBtn" class="btn btn-yale-outline hero-btn" data-text="Apply Now" aria-label="Apply now">
                         <span class="btn-text">Apply Now</span>
                         <i class="bi bi-arrow-right-circle"></i>
                     </button>
@@ -81,7 +90,7 @@
                 <div class="row g-4">
                     <div class="col-md-6 col-lg-4" data-category="undergraduate">
                         <div class="card h-100 program-card">
-                            <img src="https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?auto=format&fit=crop&w=800&q=80"
+                            <img loading="lazy" src="https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?auto=format&fit=crop&w=800&q=80"
                                 class="card-img-top" alt="Gothic Architecture Campus">
                             <div class="card-body">
                                 <h3 class="card-title h4">Yale College</h3>
@@ -102,7 +111,7 @@
                     </div>
                     <div class="col-md-6 col-lg-4" data-category="graduate">
                         <div class="card h-100 program-card">
-                            <img src="https://images.unsplash.com/photo-1571942676516-bcab00ded24d?auto=format&fit=crop&w=800&q=80"
+                            <img loading="lazy" src="https://images.unsplash.com/photo-1571942676516-bcab00ded24d?auto=format&fit=crop&w=800&q=80"
                                 class="card-img-top" alt="University Library Study">
                             <div class="card-body">
                                 <h3 class="card-title h4">Graduate School of Arts & Sciences</h3>
@@ -120,7 +129,7 @@
                     </div>
                     <div class="col-md-6 col-lg-4" data-category="professional">
                         <div class="card h-100 program-card">
-                            <img src="https://images.unsplash.com/photo-1607013251379-e6eecfffe234?auto=format&fit=crop&w=800&q=80"
+                            <img loading="lazy" src="https://images.unsplash.com/photo-1607013251379-e6eecfffe234?auto=format&fit=crop&w=800&q=80"
                                 class="card-img-top" alt="University Professional Building">
                             <div class="card-body">
                                 <h3 class="card-title h4">Professional Schools</h3>
@@ -145,7 +154,7 @@
                 <div class="row g-4">
                     <div class="col-md-6">
                         <div class="position-relative mb-4">
-                            <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=800&q=80"
+                            <img loading="lazy" src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=800&q=80"
                                 class="img-fluid rounded" alt="University Students Campus Life">
                             <div class="position-absolute bottom-0 start-0 w-100 p-4 text-white"
                                 style="background: linear-gradient(transparent, rgba(0,0,0,0.8))">
@@ -228,7 +237,7 @@
                 <div class="row g-4">
                     <div class="col-lg-6">
                         <div class="position-relative rounded overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=800&q=80"
+                            <img loading="lazy" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=800&q=80"
                                 class="img-fluid w-100" alt="University Graduates Success">
                             <div class="position-absolute bottom-0 start-0 w-100 p-4 text-white"
                                 style="background: linear-gradient(transparent, rgba(0,0,0,0.8))">
@@ -242,13 +251,13 @@
                                 <div class="row g-4">
                                     <div class="col-6">
                                         <div class="stats-card text-center">
-                                            <div class="stat-number" data-value="170000">170,000+</div>
+                                            <div class="stat-number" data-value="170000" data-suffix="+">170,000+</div>
                                             <p class="stat-label mb-0">Global Alumni Network</p>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="stats-card text-center">
-                                            <div class="stat-number" data-value="99">99%</div>
+                                            <div class="stat-number" data-value="99" data-suffix="%">99%</div>
                                             <p class="stat-label mb-0">Employment Rate</p>
                                         </div>
                                     </div>

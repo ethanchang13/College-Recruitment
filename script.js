@@ -1,4 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Theme: initialize from preference/localStorage and wire toggle
+    const root = document.documentElement;
+    const storedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const themeToggleBtn = document.getElementById("themeToggle");
+
+    function setTheme(mode) {
+        if (mode === "dark") {
+            root.classList.add("dark");
+            localStorage.setItem("theme", "dark");
+            if (themeToggleBtn) themeToggleBtn.innerHTML = '<i class="bi bi-brightness-high" aria-hidden="true"></i><span class="visually-hidden">Switch to light mode</span>';
+        } else {
+            root.classList.remove("dark");
+            localStorage.setItem("theme", "light");
+            if (themeToggleBtn) themeToggleBtn.innerHTML = '<i class="bi bi-moon-stars" aria-hidden="true"></i><span class="visually-hidden">Switch to dark mode</span>';
+        }
+    }
+
+    setTheme(storedTheme || (prefersDark ? "dark" : "light"));
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener("click", () => {
+            const isDark = root.classList.contains("dark");
+            setTheme(isDark ? "light" : "dark");
+        });
+    }
     // Navbar scroll effect
     const navbar = document.querySelector(".navbar");
     window.addEventListener("scroll", function () {
@@ -11,11 +36,29 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute("href")).scrollIntoView({
+            const target = document.querySelector(this.getAttribute("href"));
+            if (!target) return;
+            target.scrollIntoView({
                 behavior: "smooth",
             });
         });
     });
+
+    // Hero CTA scroll handlers (if sections exist)
+    const exploreBtn = document.getElementById("exploreBtn");
+    const applyBtn = document.getElementById("applyBtn");
+    if (exploreBtn) {
+        exploreBtn.addEventListener("click", () => {
+            const el = document.getElementById("programs");
+            if (el) el.scrollIntoView({ behavior: "smooth" });
+        });
+    }
+    if (applyBtn) {
+        applyBtn.addEventListener("click", () => {
+            const el = document.getElementById("costs");
+            if (el) el.scrollIntoView({ behavior: "smooth" });
+        });
+    }
 
     const programFilterButtons = document.querySelectorAll(
         ".program-filter button"
@@ -67,12 +110,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     stats.forEach((stat) => observer.observe(stat));
 
+    function formatNumber(n) {
+        return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
     function animateValue(obj, start, end, duration) {
         let startTimestamp = null;
+        const suffix = obj.getAttribute("data-suffix") || "";
         const step = (timestamp) => {
             if (!startTimestamp) startTimestamp = timestamp;
             const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-            obj.innerHTML = Math.floor(progress * (end - start) + start);
+            const val = Math.floor(progress * (end - start) + start);
+            obj.textContent = `${formatNumber(val)}${suffix}`;
             if (progress < 1) {
                 window.requestAnimationFrame(step);
             }
