@@ -2,324 +2,491 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Yale University - Discover world-class education, cutting-edge research, and a legacy of leadership in New Haven, Connecticut.">
-    <meta name="keywords" content="Yale University, college, education, Ivy League, New Haven">
-    <title>Yale University - Light and Truth Since 1701</title>
-    <meta name="color-scheme" content="light dark">
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#00356b">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b1220">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yale University - Light and Truth</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-yale">
-            <div class="container">
-                <a class="navbar-brand" href="#home">
-                    <span class="yale-nav-logo">Y</span>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation" aria-controls="navbarNav" aria-expanded="false">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#programs">Academics</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#student-life">Student Life</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#costs">Admissions & Aid</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#alumni">Alumni</a></li>
-                        <li class="nav-item d-flex align-items-center ms-lg-3">
-                            <button id="themeToggle" type="button" class="btn btn-outline-light btn-sm theme-toggle" aria-label="Toggle color theme" title="Toggle theme">
-                                <i class="bi bi-moon-stars" aria-hidden="true"></i>
-                                <span class="visually-hidden">Toggle theme</span>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">
+                <img src="yale-bulldogs-logo.png" alt="Yale Bulldogs" style="height: 40px; margin-right: 10px;">Yale
+                University
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#programs">Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#student-life">Student Life</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#financial-aid">Financial Aid</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#alumni">Alumni</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </header>
-    <main>
-        <section id="home">
-            <div class="hero-content">
-                <div class="yale-logo">Y</div>
-                <h1>Yale University</h1>
-                <div class="motto">
-                    <span class="latin">LUX ET VERITAS</span>
-                    <span class="english">Light and Truth</span>
-                </div>
-                <div class="hero-details">
-                    <span>Est. 1701</span>
-                    <span class="separator">•</span>
-                    <span>New Haven, Connecticut</span>
-                </div>
-                <div class="hero-cta">
-                    <button id="exploreBtn" class="btn btn-yale hero-btn" data-text="Explore Yale" aria-label="Explore Yale programs">
-                        <span class="btn-text">Explore Yale</span>
-                        <i class="bi bi-compass"></i>
-                    </button>
-                    <button id="applyBtn" class="btn btn-yale-outline hero-btn" data-text="Apply Now" aria-label="Apply now">
-                        <span class="btn-text">Apply Now</span>
-                        <i class="bi bi-arrow-right-circle"></i>
-                    </button>
-                </div>
-            </div>
-        </section>
-        <section id="programs">
-            <div class="container">
-                <h2>Academic Programs</h2>
-                <div class="program-filter text-center mb-5">
-                    <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-outline-primary active" data-filter="all">All
-                            Programs</button>
-                        <button type="button" class="btn btn-outline-primary"
-                            data-filter="undergraduate">Undergraduate</button>
-                        <button type="button" class="btn btn-outline-primary" data-filter="graduate">Graduate</button>
-                        <button type="button" class="btn btn-outline-primary"
-                            data-filter="professional">Professional</button>
-                    </div>
-                </div>
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-4" data-category="undergraduate">
-                        <div class="card h-100 program-card">
-                            <img loading="lazy" src="https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?auto=format&fit=crop&w=800&q=80"
-                                class="card-img-top" alt="Gothic Architecture Campus">
-                            <div class="card-body">
-                                <h3 class="card-title h4">Yale College</h3>
-                                <p class="card-text">Offering over 80 majors across humanities, social sciences, and
-                                    sciences</p>
-                                <ul class="list-unstyled">
-                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Liberal Arts Education
-                                    </li>
-                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Residential College
-                                        System</li>
-                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Research Opportunities
-                                    </li>
-                                </ul>
-                                <a href="#" class="btn btn-outline-primary mt-3">Explore Programs<i
-                                        class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4" data-category="graduate">
-                        <div class="card h-100 program-card">
-                            <img loading="lazy" src="https://images.unsplash.com/photo-1571942676516-bcab00ded24d?auto=format&fit=crop&w=800&q=80"
-                                class="card-img-top" alt="University Library Study">
-                            <div class="card-body">
-                                <h3 class="card-title h4">Graduate School of Arts & Sciences</h3>
-                                <p class="card-text">Advanced degrees across 73 departments and programs</p>
-                                <ul class="list-unstyled">
-                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Doctoral Programs</li>
-                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Master's Programs</li>
-                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Research Facilities
-                                    </li>
-                                </ul>
-                                <a href="#" class="btn btn-outline-primary mt-3">Discover More<i
-                                        class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4" data-category="professional">
-                        <div class="card h-100 program-card">
-                            <img loading="lazy" src="https://images.unsplash.com/photo-1607013251379-e6eecfffe234?auto=format&fit=crop&w=800&q=80"
-                                class="card-img-top" alt="University Professional Building">
-                            <div class="card-body">
-                                <h3 class="card-title h4">Professional Schools</h3>
-                                <p class="card-text">Including Law, Medicine, Management, and Architecture</p>
-                                <ul class="list-unstyled">
-                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Yale Law School</li>
-                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>School of Medicine</li>
-                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>School of Management
-                                    </li>
-                                </ul>
-                                <a href="#" class="btn btn-outline-primary mt-3">Learn More<i
-                                        class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="student-life">
-            <div class="container">
-                <h2>Student Life</h2>
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <div class="position-relative mb-4">
-                            <img loading="lazy" src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=800&q=80"
-                                class="img-fluid rounded" alt="University Students Campus Life">
-                            <div class="position-absolute bottom-0 start-0 w-100 p-4 text-white"
-                                style="background: linear-gradient(transparent, rgba(0,0,0,0.8))">
-                                <h3>Campus Life at Yale</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="campus-features">
-                            <div class="mb-4">
-                                <h4 class="mb-3"><i class="bi bi-house-heart me-2"></i>Residential Colleges</h4>
-                                <p>Experience our unique residential college system where you'll find a home away from
-                                    home and lifelong friendships.</p>
-                            </div>
-                            <div class="mb-4">
-                                <h4 class="mb-3"><i class="bi bi-people me-2"></i>Student Organizations</h4>
-                                <p>Join any of our 500+ student organizations, from academic clubs to performance groups
-                                    and athletic teams.</p>
-                            </div>
-                            <div class="mb-4">
-                                <h4 class="mb-3"><i class="bi bi-palette me-2"></i>Arts & Culture</h4>
-                                <p>Immerse yourself in Yale's vibrant arts scene, world-class museums, and cultural
-                                    events.</p>
-                            </div>
-                            <div>
-                                <h4 class="mb-3"><i class="bi bi-geo-alt me-2"></i>New Haven Life</h4>
-                                <p>Explore the dynamic city of New Haven, offering diverse dining, entertainment, and
-                                    cultural experiences.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="costs">
-            <div class="container">
-                <h2>Admissions & Financial Aid</h2>
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="card border-0 shadow-sm">
-                            <div class="card-body p-5">
-                                <div class="text-center mb-4">
-                                    <i class="bi bi-wallet2 display-1 text-primary mb-3"></i>
-                                    <h3 class="h2 mb-4">Need-Blind Admissions</h3>
-                                </div>
-                                <div class="row g-4">
-                                    <div class="col-md-4">
-                                        <div class="text-center">
-                                            <div class="stat-number h2 mb-2" data-value="100">100</div>
-                                            <p class="text-muted">Percent of demonstrated need met</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="text-center">
-                                            <div class="stat-number h2 mb-2" data-value="75000">75,000</div>
-                                            <p class="text-muted">Family income threshold for $0 contribution</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="text-center">
-                                            <div class="stat-number h2 mb-2" data-value="0">0</div>
-                                            <p class="text-muted">Loans required in aid packages</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-center mt-5">
-                                    <a href="#" class="btn btn-yale">Calculate Your Aid<i
-                                            class="bi bi-calculator"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
+    </nav>
 
-        <section id="alumni">
-            <div class="container">
-                <h2>Alumni Impact</h2>
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="position-relative rounded overflow-hidden">
-                            <img loading="lazy" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?auto=format&fit=crop&w=800&q=80"
-                                class="img-fluid w-100" alt="University Graduates Success">
-                            <div class="position-absolute bottom-0 start-0 w-100 p-4 text-white"
-                                style="background: linear-gradient(transparent, rgba(0,0,0,0.8))">
-                                <p class="h3 mb-0">A Legacy of Leadership</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="d-flex flex-column justify-content-center h-100">
-                            <div class="alumni-stats mb-4">
-                                <div class="row g-4">
-                                    <div class="col-12 col-sm-6">
-                                        <div class="stats-card text-center">
-                                            <div class="stat-number" data-value="170000" data-suffix="+">170,000+</div>
-                                            <p class="stat-label mb-0">Global Alumni Network</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-6">
-                                        <div class="stats-card text-center">
-                                            <div class="stat-number" data-value="99" data-suffix="%">99%</div>
-                                            <p class="stat-label mb-0">Employment Rate</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="alumni-achievements">
-                                <h4 class="mb-3">Notable Alumni Include:</h4>
-                                <ul class="list-unstyled">
-                                    <li class="mb-2"><i class="bi bi-star-fill text-warning me-2"></i>5 U.S. Presidents
-                                    </li>
-                                    <li class="mb-2"><i class="bi bi-star-fill text-warning me-2"></i>19 Supreme Court
-                                        Justices</li>
-                                    <li class="mb-2"><i class="bi bi-star-fill text-warning me-2"></i>Leaders in
-                                        Business & Technology</li>
-                                    <li class="mb-2"><i class="bi bi-star-fill text-warning me-2"></i>Nobel Prize
-                                        Winners</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="display-2 fw-bold text-white mb-4">Lux et Veritas - Light and Truth</h1>
+                <p class="lead text-white mb-4">Join Yale University and become part of a legacy of excellence that has
+                    shaped
+                    leaders for over 300 years. Our world-class education prepares you to make a difference.</p>
+                <div class="d-flex gap-3 justify-content-center">
+                    <button class="btn btn-light btn-lg px-4" onclick="showPrograms()">Explore Schools</button>
+                    <button class="btn btn-outline-light btn-lg px-4" onclick="toggleApplicationForm()">Apply
+                        Now</button>
                 </div>
             </div>
-        </section>
-    </main>
-    <footer class="bg-yale text-white py-5">
+        </div>
+    </section>
+
+    <section id="about" class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <h5>Contact Us</h5>
-                    <p>Office of Undergraduate Admissions</p>
-                    <p>Phone: (203) 432-9300</p>
-                    <p>38 Hillhouse Avenue</p>
-                    <p>New Haven, CT 06511</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#programs">Academic Programs</a></li>
-                        <li><a href="#apply">How to Apply</a></li>
-                        <li><a href="#visit">Visit Campus</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Connect With Us</h5>
-                    <div class="social-links">
-                        <a href="#" class="me-3">Facebook</a>
-                        <a href="#" class="me-3">Twitter</a>
-                        <a href="#" class="me-3">Instagram</a>
-                        <a href="#" class="me-3">LinkedIn</a>
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="display-5 fw-bold mb-4">About Yale University</h2>
+                    <p class="lead section-text mb-4">Founded in 1701, Yale University is a private Ivy League research
+                        university
+                        in New Haven, Connecticut. Yale is committed to improving the world through outstanding research
+                        and
+                        scholarship, education, preservation, and practice.</p>
+                    <div class="row g-4 mt-4">
+                        <div class="col-md-4">
+                            <div class="feature-card">
+                                <i class="bi bi-geo-alt-fill text-primary fs-1 mb-3"></i>
+                                <h5>Historic Campus</h5>
+                                <p>Beautiful New Haven campus with Gothic Revival architecture</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-card">
+                                <i class="bi bi-award-fill text-primary fs-1 mb-3"></i>
+                                <h5>Academic Excellence</h5>
+                                <p class="section-text">Consistently ranked among the world's top universities</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature-card">
+                                <i class="bi bi-people-fill text-primary fs-1 mb-3"></i>
+                                <h5>Renowned Faculty</h5>
+                                <p class="section-text">Learn from Nobel laureates and leading scholars</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="row mt-4">
-                <div class="col-12 text-center">
-                    <p class="mb-0">&copy; 2025 Yale University. All rights reserved.</p>
+        </div>
+    </section>
+
+    <section id="programs" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="display-5 fw-bold mb-4">Schools & Programs</h2>
+                    <p class="lead section-text">Discover world-class education across Yale's undergraduate and graduate
+                        schools
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4" id="programs-container">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 program-card">
+                        <div class="card-body">
+                            <i class="bi bi-book-fill text-primary fs-1 mb-3"></i>
+                            <h5 class="card-title">Yale College</h5>
+                            <p class="card-text">Undergraduate liberal arts education with over 80 majors in the
+                                humanities, sciences,
+                                and social sciences.</p>
+                            <div class="faculty-highlight mt-3">
+                                <h6 class="text-primary">Featured Faculty</h6>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong>Dr. Amy Hungerford</strong><br>
+                                        <small>English Professor, Dean of Yale College</small>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Dr. Robert Shiller</strong><br>
+                                        <small>Economics Professor, Nobel Prize Winner</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Liberal Arts</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Sciences</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Engineering</li>
+                            </ul>
+                            <button class="btn btn-primary mt-auto" onclick="showProgramDetails('college')">Learn
+                                More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 program-card">
+                        <div class="card-body">
+                            <i class="bi bi-heart-pulse-fill text-primary fs-1 mb-3"></i>
+                            <h5 class="card-title">Yale School of Medicine</h5>
+                            <p class="card-text">Leading medical education and research with a focus on advancing human
+                                health and
+                                well-being.</p>
+                            <div class="faculty-highlight mt-3">
+                                <h6 class="text-primary">Featured Faculty</h6>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong>Dr. Nancy Brown</strong><br>
+                                        <small>Dean, School of Medicine</small>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Dr. Richard Lifton</strong><br>
+                                        <small>Genetics Research Leader</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Medical Education</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Biomedical Research</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Public Health</li>
+                            </ul>
+                            <button class="btn btn-primary mt-auto" onclick="showProgramDetails('medicine')">Learn
+                                More</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 program-card">
+                        <div class="card-body">
+                            <i class="bi bi-briefcase-fill text-primary fs-1 mb-3"></i>
+                            <h5 class="card-title">Yale School of Management</h5>
+                            <p class="card-text">World-class business education developing leaders who create positive
+                                impact in
+                                organizations and society.</p>
+                            <div class="faculty-highlight mt-3">
+                                <h6 class="text-primary">Featured Faculty</h6>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong>Dean Kerwin Charles</strong><br>
+                                        <small>Dean, School of Management</small>
+                                    </div>
+                                    <div class="col-6">
+                                        <strong>Prof. Jeffrey Sonnenfeld</strong><br>
+                                        <small>Leadership & Governance Expert</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>MBA Programs</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Executive Education</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Nonprofit Management</li>
+                            </ul>
+                            <button class="btn btn-primary mt-auto" onclick="showProgramDetails('management')">Learn
+                                More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="student-life" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="display-5 fw-bold mb-4">Student Life</h2>
+                    <p class="lead section-text">Experience a vibrant campus community with state-of-the-art facilities
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="student-life-item">
+                        <img src="attached_assets/stock_images/yale_university_camp_de73f645.jpg"
+                            alt="Yale campus architecture" class="img-fluid rounded mb-3">
+                        <h4>Historic Gothic Architecture</h4>
+                        <p class="section-text">Beautiful collegiate Gothic buildings, world-class libraries, and
+                            cutting-edge
+                            research facilities.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="student-life-item">
+                        <img src="attached_assets/stock_images/university_students__b7dd8994.jpg"
+                            alt="Yale students studying" class="img-fluid rounded mb-3">
+                        <h4>Student Organizations</h4>
+                        <p class="section-text">Join over 500 student organizations, including debate societies,
+                            cultural groups,
+                            and service organizations.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <div class="housing-section p-4 bg-white rounded shadow-sm">
+                        <h4 class="mb-3">Housing Options</h4>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h6>Residential Colleges</h6>
+                                <p class="small">$9,500/semester</p>
+                            </div>
+                            <div class="col-md-4">
+                                <h6>Off-Campus Housing</h6>
+                                <p class="small">$700-1200/month</p>
+                            </div>
+                            <div class="col-md-4">
+                                <h6>Graduate Housing</h6>
+                                <p class="small">$800-1500/month</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="financial-aid" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="display-5 fw-bold mb-4">Cost & Financial Aid</h2>
+                    <p class="lead section-text">We believe education should be accessible. Explore our financial
+                        options.</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Tuition & Fees</h5>
+                            <div class="price-display">
+                                <span class="h2 text-primary">$64,700</span>
+                                <span class="text-muted">/year</span>
+                            </div>
+                            <ul class="list-unstyled mt-3">
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Full-time program</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Lab access included</li>
+                                <li><i class="bi bi-check-circle-fill text-success me-2"></i>Career services</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Financial Aid Options</h5>
+                            <div class="financial-options">
+                                <div class="option-item mb-3">
+                                    <h6>Yale Scholarship</h6>
+                                    <p class="small text-muted">Need-based grants (no merit scholarships) covering up to
+                                        full tuition for
+                                        qualifying families</p>
+                                </div>
+                                <div class="option-item mb-3">
+                                    <h6>Work-Study Programs</h6>
+                                    <p class="small text-muted">On-campus employment opportunities to help cover
+                                        expenses</p>
+                                </div>
+                                <div class="option-item mb-3">
+                                    <h6>Federal & State Aid</h6>
+                                    <p class="small text-muted">Grants and loans based on financial need</p>
+                                </div>
+                                <div class="option-item">
+                                    <h6>Payment Plans & Deadlines</h6>
+                                    <p class="small text-muted">Flexible monthly payment options available through Yale
+                                        Student Financial
+                                        Services</p>
+                                    <ul class="small text-muted mt-2">
+                                        <li>Priority Aid Deadline: February 1</li>
+                                        <li>Regular Aid Deadline: March 1</li>
+                                        <li>Payment Plan Enrollment: July 1 - May 1</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="alumni" class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center mb-5">
+                    <h2 class="display-5 fw-bold mb-4">Alumni Success</h2>
+                    <p class="lead text-white-75 mb-4">Our graduates are leaders across all sectors - from government
+                        and academia
+                        to business and the arts</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="alumni-card text-center">
+                        <div class="alumni-avatar bg-yale-blue text-white rounded-circle d-flex align-items-center justify-content-center mb-3"
+                            style="width: 100px; height: 100px; font-size: 2rem; font-weight: bold;">GB</div>
+                        <h5>George W. Bush</h5>
+                        <p class="text-white-75">43rd President of the United States</p>
+                        <p>"Yale taught me the importance of public service and leadership."</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="alumni-card text-center">
+                        <div class="alumni-avatar bg-yale-blue text-white rounded-circle d-flex align-items-center justify-content-center mb-3"
+                            style="width: 100px; height: 100px; font-size: 2rem; font-weight: bold;">MS</div>
+                        <h5>Meryl Streep</h5>
+                        <p class="text-white-75">Academy Award-winning Actress</p>
+                        <p>"Yale's emphasis on critical thinking shaped my approach to every role."</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="alumni-card text-center">
+                        <div class="alumni-avatar bg-yale-blue text-white rounded-circle d-flex align-items-center justify-content-center mb-3"
+                            style="width: 100px; height: 100px; font-size: 2rem; font-weight: bold;">AC</div>
+                        <h5>Anderson Cooper</h5>
+                        <p class="text-white-75">CNN Anchor and Journalist</p>
+                        <p>"Yale prepared me to ask the tough questions and seek the truth."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-12 text-center">
+                    <div class="stats-row">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h3 class="display-6 fw-bold">4.6%</h3>
+                                <p>Acceptance Rate</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h3 class="display-6 fw-bold">6,500</h3>
+                                <p>Undergraduate Students</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h3 class="display-6 fw-bold">6:1</h3>
+                                <p>Student-Faculty Ratio</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h3 class="display-6 fw-bold">324</h3>
+                                <p>Years of Excellence</p>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-lg-12">
+                                <h5 class="section-heading">Industry Partnerships & Career Outcomes</h5>
+                                <p class="section-text">Yale partners with leading organizations including Goldman
+                                    Sachs, McKinsey &
+                                    Company, Google, Microsoft, Johnson & Johnson, and major government agencies.</p>
+                                <div class="row mt-3">
+                                    <div class="col-md-4 text-center">
+                                        <h6 class="fw-bold text-primary">96%</h6>
+                                        <small>Employment Rate</small>
+                                    </div>
+                                    <div class="col-md-4 text-center">
+                                        <h6 class="fw-bold text-primary">$89,000</h6>
+                                        <small>Median Starting Salary</small>
+                                    </div>
+                                    <div class="col-md-4 text-center">
+                                        <h6 class="fw-bold text-primary">1,200+</h6>
+                                        <small>Active Employer Partners</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold text-center mb-5">Get in Touch</h2>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="contact-info">
+                                <h5>Contact Information</h5>
+                                <div class="contact-item mb-3">
+                                    <i class="bi bi-geo-alt-fill text-primary me-2"></i>
+                                    <span>New Haven, Connecticut 06511</span>
+                                </div>
+                                <div class="contact-item mb-3">
+                                    <i class="bi bi-telephone-fill text-primary me-2"></i>
+                                    <span>For current contact details, visit yale.edu</span>
+                                </div>
+                                <div class="contact-item mb-3">
+                                    <i class="bi bi-envelope-fill text-primary me-2"></i>
+                                    <span>Visit admissions.yale.edu for official information</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div id="application-form" class="application-form" style="display: none;">
+                                <h5>Quick Application</h5>
+                                <form>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" placeholder="Full Name" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="email" class="form-control" placeholder="Email Address" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <select class="form-select" required>
+                                            <option value="">Select School</option>
+                                            <option value="college">Yale College</option>
+                                            <option value="medicine">Yale School of Medicine</option>
+                                            <option value="management">Yale School of Management</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100">Submit Application</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>&copy; 2024 Yale University. All rights reserved.</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 
