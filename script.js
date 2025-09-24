@@ -87,6 +87,7 @@ function showPrograms() {
 function toggleApplicationForm() {
   const form = document.getElementById("application-form");
   const contactSection = document.querySelector("#contact");
+  const placeholder = document.getElementById("application-placeholder");
 
   const offsetTop = contactSection.offsetTop - 80;
   window.scrollTo({
@@ -95,24 +96,33 @@ function toggleApplicationForm() {
   });
 
   setTimeout(() => {
-    if (form.style.display === "none" || form.style.display === "") {
+    const opening = form.style.display === "none" || form.style.display === "";
+    if (opening) {
+      if (placeholder) placeholder.style.display = "none";
       form.style.display = "block";
       form.classList.add("show");
       form.style.opacity = "0";
-      form.style.transform = "translateY(20px)";
-
+      form.style.transform = "translateY(24px) scale(.98)";
       setTimeout(() => {
-        form.style.transition = "all 0.5s ease";
+        form.style.transition = "all 0.55s cubic-bezier(.16,.8,.3,1)";
         form.style.opacity = "1";
-        form.style.transform = "translateY(0)";
-      }, 100);
+        form.style.transform = "translateY(0) scale(1)";
+      }, 40);
     } else {
       form.style.opacity = "0";
-      form.style.transform = "translateY(20px)";
+      form.style.transform = "translateY(18px) scale(.98)";
       setTimeout(() => {
         form.style.display = "none";
         form.classList.remove("show");
-      }, 500);
+        if (placeholder) {
+          placeholder.style.display = "flex";
+          placeholder.style.opacity = "0";
+          setTimeout(() => {
+            placeholder.style.transition = "opacity .4s ease";
+            placeholder.style.opacity = "1";
+          }, 30);
+        }
+      }, 450);
     }
   }, 800);
 }
