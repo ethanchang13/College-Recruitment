@@ -5,12 +5,11 @@
 }
 
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   line-height: 1.6;
   color: #2c3e50;
   scroll-behavior: smooth;
-  background: #f5f7fa;
+  background: #ffffff;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -29,7 +28,7 @@ body {
   --gradient-primary: linear-gradient(135deg, #00356b 0%, #1a4c80 100%);
   --gradient-secondary: linear-gradient(135deg, #00356b 0%, #002244 100%);
   --gradient-accent: linear-gradient(135deg, #1a4c80 0%, #0d1f33 100%);
-  --gradient-light: linear-gradient(135deg, #ffffff 0%, #eef3f8 100%);
+  --gradient-light: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
   --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   --shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
@@ -386,9 +385,7 @@ body {
   position: relative;
 }
 
-.section-alt {
-  background: linear-gradient(180deg, #f6f9fc 0%, #eef3f8 100%);
-}
+.section-alt { background:#ffffff; }
 
 .section-accent {
   background: var(--gradient-accent);
@@ -784,6 +781,8 @@ footer p {
   margin-bottom: .5rem;
 }
 
+section.bg-light, .section.bg-light { background:#ffffff !important; }
+
 .social-links a {
   border: 1px solid rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(4px);
@@ -798,15 +797,9 @@ footer p {
   width: 11px;
 }
 
-::-webkit-scrollbar-track {
-  background: #eef3f8;
-}
+::-webkit-scrollbar-track { background: #ffffff; }
 
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #1a4c80, #00356b);
-  border-radius: 8px;
-  border: 2px solid #eef3f8;
-}
+::-webkit-scrollbar-thumb { background: linear-gradient(135deg, #1a4c80, #00356b); border-radius: 8px; border: 2px solid #ffffff; }
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #002244, #00356b);
