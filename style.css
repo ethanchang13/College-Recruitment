@@ -182,6 +182,8 @@ body {
   font-weight: 800;
 }
 
+.hero-subtitle { font-size:1.1rem; letter-spacing:.25rem; text-transform:uppercase; font-weight:600; opacity:.9; margin-top:-.25rem; }
+
 .gradient-title {
   background: linear-gradient(90deg, #fff 0%, #d0e4ff 35%, #9fc2f1 70%, #ffffff 100%);
   -webkit-background-clip: text;
