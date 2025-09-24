@@ -10,6 +10,8 @@ body {
   line-height: 1.6;
   color: #2c3e50;
   scroll-behavior: smooth;
+  background: #f5f7fa;
+  -webkit-font-smoothing: antialiased;
 }
 
 :root {
@@ -26,6 +28,8 @@ body {
   --dark-color: #212529;
   --gradient-primary: linear-gradient(135deg, #00356b 0%, #1a4c80 100%);
   --gradient-secondary: linear-gradient(135deg, #00356b 0%, #002244 100%);
+  --gradient-accent: linear-gradient(135deg, #1a4c80 0%, #0d1f33 100%);
+  --gradient-light: linear-gradient(135deg, #ffffff 0%, #eef3f8 100%);
   --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   --shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
@@ -88,6 +92,28 @@ body {
   align-items: center;
 }
 
+.hero-layer {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.08), transparent 60%), linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 53, 107, 0.75));
+  mix-blend-mode: normal;
+  z-index: 0;
+}
+
+.hero-noise {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 4px);
+  opacity: 0.3;
+  animation: noiseShift 12s linear infinite;
+  z-index: 1;
+}
+
+@keyframes noiseShift {
+  0% { transform: translate3d(0,0,0); }
+  100% { transform: translate3d(100px,50px,0); }
+}
+
 .hero-section::before {
   content: "";
   position: absolute;
@@ -113,11 +139,39 @@ body {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(2px);
-  border-radius: 20px;
-  padding: 3rem 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px) saturate(140%);
+  border-radius: 28px;
+  padding: 3.5rem 2.75rem 4.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 70%);
+  transform: translateX(-50%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 30px;
+  backdrop-filter: blur(6px);
+  font-weight: 600;
 }
 
 .hero-content h1 {
@@ -125,6 +179,16 @@ body {
   margin-bottom: 1.5rem;
   font-weight: 800;
 }
+
+.gradient-title {
+  background: linear-gradient(90deg, #fff 0%, #d0e4ff 35%, #9fc2f1 70%, #ffffff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+}
+
+.title-accent { color: rgba(255,255,255,0.35); }
 
 .hero-content .lead {
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5);
@@ -176,6 +240,10 @@ body {
   text-align: center;
   padding: 2rem;
   transition: all 0.3s ease;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e5ecf3;
+  box-shadow: 0 4px 12px -2px rgba(0,0,0,0.05), 0 0 0 1px rgba(0,53,107,0.03);
 }
 
 .feature-card:hover {
@@ -189,6 +257,7 @@ body {
   transition: all 0.3s ease;
   overflow: hidden;
   position: relative;
+  background: #ffffff;
 }
 
 .program-card::before {
@@ -227,6 +296,10 @@ body {
 .student-life-item {
   text-align: center;
   padding: 1rem;
+  background: #fff;
+  border-radius: 18px;
+  border: 1px solid #e9eef2;
+  box-shadow: 0 6px 16px -6px rgba(0,0,0,0.08);
 }
 
 .student-life-item img {
@@ -253,6 +326,9 @@ body {
 .alumni-card {
   padding: 2rem;
   transition: all 0.3s ease;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 22px;
 }
 
 .alumni-card:hover {
@@ -300,6 +376,60 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
   color: var(--yale-blue);
+}
+
+.section { padding: 6rem 0; position: relative; }
+.section-alt { background: linear-gradient(180deg,#f6f9fc 0%,#eef3f8 100%); }
+.section-accent { background: var(--gradient-accent); position: relative; }
+.section-accent::before { content:""; position:absolute; inset:0; background:radial-gradient(circle at 25% 20%, rgba(255,255,255,0.15), transparent 60%); mix-blend-mode: overlay; }
+
+.section-head { max-width: 900px; }
+.max-w-2 { max-width: 720px; margin-left: auto; margin-right: auto; }
+.section-title-decor { position: relative; display: inline-block; padding-bottom: .75rem; }
+.section-title-decor::after { content:""; position:absolute; left:50%; bottom:0; width:120px; height:4px; background: var(--gradient-primary); transform: translateX(-50%); border-radius: 4px; box-shadow:0 2px 8px rgba(0,53,107,.4); }
+.section-title-decor-light { position: relative; display: inline-block; padding-bottom: .75rem; }
+.section-title-decor-light::after { content:""; position:absolute; left:50%; bottom:0; width:140px; height:4px; background:linear-gradient(90deg,#fff,#b9d6f1); transform: translateX(-50%); border-radius: 4px; box-shadow:0 2px 8px rgba(0,0,0,.3); }
+
+.glass-tile { background: rgba(255,255,255,0.7); backdrop-filter: blur(12px) saturate(160%); border:1px solid rgba(255,255,255,0.5); box-shadow:0 8px 24px -10px rgba(0,0,0,.08); }
+.glass-tile:hover { transform: translateY(-8px); box-shadow:0 16px 40px -12px rgba(0,0,0,.18); }
+
+.icon-wrap { width: 70px; height: 70px; border-radius: 18px; display:flex; align-items:center; justify-content:center; font-size:1.9rem; color:#fff; }
+.gradient-icon { background: linear-gradient(135deg,#00356b,#1a4c80); box-shadow:0 6px 18px -4px rgba(0,53,107,.5); }
+
+.hero-scroll-indicator { position:absolute; left:50%; bottom:20px; width:34px; height:54px; border:2px solid rgba(255,255,255,0.5); border-radius:26px; transform:translateX(-50%); display:flex; align-items:flex-start; justify-content:center; padding-top:6px; cursor:pointer; transition:all .3s; }
+.hero-scroll-indicator span { width:6px; height:6px; border-radius:50%; background:#fff; animation: scrollDot 2s infinite; }
+@keyframes scrollDot { 0% { transform: translateY(0); opacity:1; } 70% { transform: translateY(26px); opacity:0; } 100% { opacity:0; } }
+.hero-scroll-indicator:hover { border-color:#fff; }
+
+.contact-info { position: relative; overflow:hidden; }
+.contact-info::before { content:""; position:absolute; top:0; left:0; right:0; height:4px; background: var(--gradient-primary); }
+
+.application-form { position:relative; }
+.application-form::before { content:""; position:absolute; top:0; left:0; right:0; height:4px; background: var(--gradient-primary); border-top-left-radius:14px; border-top-right-radius:14px; }
+
+.price-display span.h2 { font-size: 2.6rem; }
+
+.program-card .card-body h5 { font-weight:600; letter-spacing:.3px; }
+.program-card .card-body ul { margin-top:1.25rem; }
+
+.alumni-avatar { background:linear-gradient(135deg,#00356b,#1a4c80) !important; box-shadow:0 8px 22px -6px rgba(0,53,107,.6); }
+
+.stats-row h3 { background: linear-gradient(90deg,#00356b,#1a4c80); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+footer { position: relative; background: #0d1f33; }
+footer::before { content:""; position:absolute; inset:0; background:linear-gradient(135deg, rgba(255,255,255,0.04), transparent); pointer-events:none; }
+footer p { margin-bottom: .5rem; }
+
+.social-links a { border:1px solid rgba(255,255,255,0.18); backdrop-filter: blur(4px); }
+.social-links a:hover { background:linear-gradient(135deg,#00356b,#1a4c80); box-shadow:0 8px 20px -8px rgba(0,53,107,.7); }
+
+::-webkit-scrollbar { width:11px; }
+::-webkit-scrollbar-track { background:#eef3f8; }
+::-webkit-scrollbar-thumb { background: linear-gradient(135deg,#1a4c80,#00356b); border-radius:8px; border:2px solid #eef3f8; }
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(135deg,#002244,#00356b); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
 }
 
 .contact-info {
@@ -470,6 +600,9 @@ body {
   .stats-row {
     padding: 1.5rem;
   }
+  .hero-content { padding: 2.5rem 1.75rem 3.25rem; }
+  .hero-content h1 { font-size: 2.4rem; line-height:1.15; }
+  .section { padding: 4.5rem 0; }
 }
 
 @media (max-width: 576px) {
@@ -487,4 +620,7 @@ body {
   .alumni-card {
     padding: 1rem;
   }
+  .hero-content h1 { font-size: 2rem; }
+  .hero-badge { font-size:.65rem; }
+  .hero-scroll-indicator { bottom:10px; transform:scale(.85) translateX(-50%); }
 }

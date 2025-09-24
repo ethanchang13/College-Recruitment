@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initNavbarScroll();
   initFormValidation();
   addScrollToTopButton();
+  initHeroEnhancements();
 });
 
 function initSmoothScrolling() {
@@ -376,3 +377,46 @@ function updateActiveNavLink() {
 }
 
 updateActiveNavLink();
+
+function initHeroEnhancements() {
+  const scrollIndicator = document.querySelector('.hero-scroll-indicator');
+  const hero = document.querySelector('.hero-section');
+  if (scrollIndicator && hero) {
+    window.addEventListener('scroll', () => {
+      const threshold = hero.offsetHeight * 0.3;
+      if (window.scrollY > threshold) {
+        scrollIndicator.style.opacity = '0';
+        scrollIndicator.style.transform = 'translate(-50%, 10px) scale(0.7)';
+      } else {
+        scrollIndicator.style.opacity = '1';
+        scrollIndicator.style.transform = 'translate(-50%, 0) scale(1)';
+      }
+    });
+  }
+  const heroContent = document.querySelector('.hero-content');
+  if (heroContent) {
+    heroContent.style.opacity = '0';
+    heroContent.style.transform = 'translateY(40px)';
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        heroContent.style.transition = 'all 1s cubic-bezier(.16,.8,.38,.98)';
+        heroContent.style.opacity = '1';
+        heroContent.style.transform = 'translateY(0)';
+      }, 80);
+    });
+  }
+  const glassTiles = document.querySelectorAll('.glass-tile');
+  glassTiles.forEach((tile) => {
+    tile.addEventListener('mousemove', (e) => {
+      const rect = tile.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      tile.style.setProperty('--mx', x + 'px');
+      tile.style.setProperty('--my', y + 'px');
+      tile.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.9), rgba(255,255,255,0.55) 40%, rgba(255,255,255,0.4) 70%)`;
+    });
+    tile.addEventListener('mouseleave', () => {
+      tile.style.background = 'rgba(255,255,255,0.7)';
+    });
+  });
+}
