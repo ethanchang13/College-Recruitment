@@ -86,6 +86,7 @@ body {
   position: relative;
   overflow: hidden;
   padding-top: 80px;
+  padding-bottom: 140px;
   color: white;
   min-height: 100vh;
   display: flex;
@@ -504,6 +505,47 @@ body {
   cursor: pointer;
   transition: all .3s;
   z-index: 3;
+}
+
+/* Responsive adjustments so indicator always sits just below main hero content */
+@media (max-width: 992px) {
+  .hero-section {
+    padding-bottom: 120px; /* slightly less on tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    padding-bottom: 110px; /* conserve vertical space on small phones */
+  }
+  .hero-content {
+    padding: 2.75rem 1.75rem 3rem; /* tighter padding so content ends higher */
+  }
+  .hero-scroll-indicator {
+    bottom: 18px;
+    width: 30px;
+    height: 48px;
+  }
+}
+
+/* Short viewport heights (e.g., landscape phones, small laptops) */
+@media (max-height: 720px) {
+  .hero-section {
+    padding-bottom: 100px;
+  }
+  .hero-content {
+    padding-bottom: 3rem;
+  }
+}
+
+@media (max-height: 600px) {
+  .hero-section {
+    padding-bottom: 90px;
+  }
+  .hero-scroll-indicator {
+    bottom: 14px;
+    transform: translateX(-50%) scale(.9);
+  }
 }
 
 .hero-scroll-indicator span {
