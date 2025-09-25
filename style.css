@@ -33,6 +33,7 @@ body {
   --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   --shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  --surface-soft: linear-gradient(145deg, #ffffff 0%, #ecf2f8 55%, #e2ebf4 100%);
 
   --bs-primary: #00356b;
   --bs-primary-rgb: 0, 53, 107;
@@ -253,10 +254,10 @@ body {
   text-align: center;
   padding: 2rem;
   transition: all 0.3s ease;
-  background: #ffffff;
+  background: var(--surface-soft);
   border-radius: 20px;
-  border: 1px solid #e5ecf3;
-  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 53, 107, 0.03);
+  border: 1px solid #d9e3ec;
+  box-shadow: 0 6px 18px -6px rgba(0, 38, 77, 0.15), 0 0 0 1px rgba(0, 53, 107, 0.05);
 }
 
 .feature-card:hover {
@@ -264,13 +265,13 @@ body {
 }
 
 .program-card {
-  border: none;
-  border-radius: 20px;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.3s ease;
+  border: 1px solid #dbe4ec;
+  border-radius: 22px;
+  box-shadow: 0 10px 28px -14px rgba(0, 53, 107, 0.2), 0 0 0 1px rgba(0, 53, 107, 0.05);
+  transition: all 0.35s ease;
   overflow: hidden;
   position: relative;
-  background: #ffffff;
+  background: var(--surface-soft);
 }
 
 .program-card::before {
@@ -286,8 +287,8 @@ body {
 }
 
 .program-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-10px) scale(1.015);
+  box-shadow: 0 18px 40px -16px rgba(0, 53, 107, 0.35), 0 0 0 1px rgba(0, 53, 107, 0.08);
 }
 
 .program-card:hover::before {
@@ -309,10 +310,14 @@ body {
 .student-life-item {
   text-align: center;
   padding: 1rem;
-  background: #fff;
-  border-radius: 18px;
-  border: 1px solid #e9eef2;
-  box-shadow: 0 6px 16px -6px rgba(0, 0, 0, 0.08);
+  background: var(--surface-soft);
+  border-radius: 20px;
+  border: 1px solid #d7e1ea;
+  box-shadow: 0 8px 22px -12px rgba(0, 50, 90, 0.25), 0 0 0 1px rgba(0, 53, 107, 0.05);
+}
+
+.student-life-item {
+  justify-content: center;
 }
 
 .student-life-item img {
@@ -507,47 +512,6 @@ body {
   z-index: 3;
 }
 
-/* Responsive adjustments so indicator always sits just below main hero content */
-@media (max-width: 992px) {
-  .hero-section {
-    padding-bottom: 120px; /* slightly less on tablets */
-  }
-}
-
-@media (max-width: 576px) {
-  .hero-section {
-    padding-bottom: 110px; /* conserve vertical space on small phones */
-  }
-  .hero-content {
-    padding: 2.75rem 1.75rem 3rem; /* tighter padding so content ends higher */
-  }
-  .hero-scroll-indicator {
-    bottom: 18px;
-    width: 30px;
-    height: 48px;
-  }
-}
-
-/* Short viewport heights (e.g., landscape phones, small laptops) */
-@media (max-height: 720px) {
-  .hero-section {
-    padding-bottom: 100px;
-  }
-  .hero-content {
-    padding-bottom: 3rem;
-  }
-}
-
-@media (max-height: 600px) {
-  .hero-section {
-    padding-bottom: 90px;
-  }
-  .hero-scroll-indicator {
-    bottom: 14px;
-    transform: translateX(-50%) scale(.9);
-  }
-}
-
 .hero-scroll-indicator span {
   width: 6px;
   height: 6px;
@@ -605,12 +569,6 @@ body {
   background: var(--gradient-primary);
   border-top-left-radius: 14px;
   border-top-right-radius: 14px;
-}
-
-.contact-grid {
-  /* Simplified: stack panels vertically to avoid fixed column overflow on small screens */
-  display: block;
-  width: 100%;
 }
 
 .contact-panel {
@@ -770,6 +728,71 @@ body {
   color: transparent;
 }
 
+.financial-card .card-body {
+  padding: 2.25rem 2rem 2.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.financial-card {
+  background: var(--surface-soft) !important;
+  border: 1px solid #d5e0e9;
+  box-shadow: 0 8px 24px -10px rgba(0,53,107,.18), 0 0 0 1px rgba(0,53,107,.05);
+  border-radius: 22px;
+}
+.financial-card .card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: .3px;
+  margin-bottom: 1.1rem;
+}
+.financial-card .price-display span.h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.05;
+  margin-right: .35rem;
+}
+.financial-focus .card-body {
+  text-align: center;
+  align-items: center;
+}
+.financial-focus .price-display {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: .25rem;
+}
+.financial-focus ul {
+  padding-left: 0;
+  margin-left: 0;
+}
+.financial-focus ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+}
+.financial-card .price-display + ul {
+  margin-top: 1.4rem;
+}
+.financial-card ul li {
+  padding: .35rem 0;
+  font-size: .95rem;
+}
+.financial-card .financial-options .option-item h6 {
+  font-size: .95rem;
+  font-weight: 600;
+  margin-bottom: .25rem;
+}
+.financial-card .financial-options .option-item p.small {
+  font-size: .75rem;
+  line-height: 1.35;
+}
+.financial-card .financial-options ul.small li {
+  padding: 2px 0;
+}
+
 footer {
   position: relative;
   background: #0d1f33;
@@ -836,6 +859,13 @@ footer p {
 
 .visual-block:not(:hover) {
   transition: all .5s cubic-bezier(.16, .8, .3, 1);
+}
+
+.image-architecture {
+  background: linear-gradient(rgba(0,53,107,.55), rgba(0,34,68,.65)), url('imgs/Historic-Gothic-Architecture.webp') center/cover no-repeat;
+}
+.image-organizations {
+  background: linear-gradient(rgba(0,53,107,.55), rgba(0,34,68,.65)), url('imgs/Student-Organizations.webp') center/cover no-repeat;
 }
 
 .mini-shot {
@@ -1026,6 +1056,23 @@ section.bg-light,
 
 .pulse {
   animation: pulse 2s infinite;
+}
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+  font-size: 1.25rem;
+  z-index: 1000;
 }
 
 @keyframes pulse {

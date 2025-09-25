@@ -219,14 +219,14 @@
             </div>
             <div class="row g-4">
                 <div class="col-lg-6">
-                    <div class="student-life-item visual-block gradient-a">
+                    <div class="student-life-item visual-block image-architecture">
                         <h4>Historic Gothic Architecture</h4>
                         <p class="section-text">Beautiful collegiate Gothic buildings, world-class libraries, and
                             cutting-edge research facilities.</p>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="student-life-item visual-block gradient-b">
+                    <div class="student-life-item visual-block image-organizations">
                         <h4>Student Organizations</h4>
                         <p class="section-text">Join 500+ student organizations: debate, cultural, service, innovation,
                             and performance groups.</p>
@@ -266,7 +266,7 @@
             </div>
             <div class="row g-4">
                 <div class="col-lg-6">
-                    <div class="card h-100">
+                    <div class="card h-100 financial-card financial-focus">
                         <div class="card-body">
                             <h5 class="card-title">Tuition & Fees</h5>
                             <div class="price-display">
@@ -282,7 +282,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="card h-100">
+                    <div class="card h-100 financial-card">
                         <div class="card-body">
                             <h5 class="card-title">Financial Aid Options</h5>
                             <div class="financial-options">
@@ -431,68 +431,73 @@
                 <p class="lead section-text max-w-2">Find key admission channels and begin a quick preliminary
                     application signal. Official processes occur through Yale's primary portals.</p>
             </div>
-            <div class="contact-grid">
-                <div class="contact-panel">
-                    <div class="contact-block">
-                        <div class="icon"><i class="bi bi-geo-alt-fill"></i></div>
-                        <div class="body">
-                            <h6>Location</h6>
-                            <p class="small mb-0">New Haven, Connecticut 06511</p>
+            <div class="row g-4 align-items-stretch">
+                <div class="col-lg-5 d-flex">
+                    <div class="contact-panel w-100">
+                        <div class="contact-block">
+                            <div class="icon"><i class="bi bi-geo-alt-fill"></i></div>
+                            <div class="body">
+                                <h6>Location</h6>
+                                <p class="small mb-0">New Haven, Connecticut 06511</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="contact-block">
-                        <div class="icon"><i class="bi bi-telephone-fill"></i></div>
-                        <div class="body">
-                            <h6>General Inquiries</h6>
-                            <p class="small mb-0">Refer to official directory at yale.edu for current numbers</p>
+                        <div class="contact-block">
+                            <div class="icon"><i class="bi bi-telephone-fill"></i></div>
+                            <div class="body">
+                                <h6>General Inquiries</h6>
+                                <p class="small mb-0">Refer to official directory at yale.edu for current numbers</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="contact-block">
-                        <div class="icon"><i class="bi bi-envelope-fill"></i></div>
-                        <div class="body">
-                            <h6>Admissions</h6>
-                            <p class="small mb-0">Visit admissions.yale.edu for authoritative timelines</p>
+                        <div class="contact-block">
+                            <div class="icon"><i class="bi bi-envelope-fill"></i></div>
+                            <div class="body">
+                                <h6>Admissions</h6>
+                                <p class="small mb-0">Visit admissions.yale.edu for authoritative timelines</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="contact-cta">
-                        <div class="cta-text">Ready to signal interest?</div>
-                        <button class="btn btn-primary w-100" onclick="toggleApplicationForm()">Open Quick
-                            Application</button>
+                        <div class="contact-cta">
+                            <div class="cta-text">Ready to signal interest?</div>
+                            <button class="btn btn-primary w-100" onclick="toggleApplicationForm()">Open Quick
+                                Application</button>
+                        </div>
                     </div>
                 </div>
-                <div class="form-panel">
-                    <div id="application-form" class="application-form" style="display:none;">
-                        <h5 class="mb-3">Quick Application</h5>
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-12">
-                                    <input type="text" class="form-control" placeholder="Full Name" required>
+                <div class="col-lg-7 d-flex">
+                    <div class="form-panel w-100">
+                        <div id="application-form" class="application-form" style="display:none;">
+                            <h5 class="mb-3">Quick Application</h5>
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <input type="text" class="form-control" placeholder="Full Name" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <input type="email" class="form-control" placeholder="Email Address" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <select class="form-select" required>
+                                            <option value="">Select School</option>
+                                            <option value="college">Yale College</option>
+                                            <option value="medicine">Yale School of Medicine</option>
+                                            <option value="management">Yale School of Management</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary w-100">Submit Application</button>
+                                    </div>
                                 </div>
-                                <div class="col-12">
-                                    <input type="email" class="form-control" placeholder="Email Address" required>
-                                </div>
-                                <div class="col-12">
-                                    <select class="form-select" required>
-                                        <option value="">Select School</option>
-                                        <option value="college">Yale College</option>
-                                        <option value="medicine">Yale School of Medicine</option>
-                                        <option value="management">Yale School of Management</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-primary w-100">Submit Application</button>
-                                </div>
+                            </form>
+                        </div>
+                        <div class="application-placeholder" id="application-placeholder">
+                            <div class="placeholder-inner">
+                                <div class="placeholder-badge">Preview</div>
+                                <h5 class="mb-3">Express Interest</h5>
+                                <p class="small mb-4">Open the quick application panel to submit basic interest details
+                                    for
+                                    follow-up context simulation.</p>
+                                <button class="btn btn-outline-primary w-100"
+                                    onclick="toggleApplicationForm()">Begin</button>
                             </div>
-                        </form>
-                    </div>
-                    <div class="application-placeholder" id="application-placeholder">
-                        <div class="placeholder-inner">
-                            <div class="placeholder-badge">Preview</div>
-                            <h5 class="mb-3">Express Interest</h5>
-                            <p class="small mb-4">Open the quick application panel to submit basic interest details for
-                                follow-up context simulation.</p>
-                            <button class="btn btn-outline-primary w-100"
-                                onclick="toggleApplicationForm()">Begin</button>
                         </div>
                     </div>
                 </div>

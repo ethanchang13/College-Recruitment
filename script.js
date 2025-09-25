@@ -344,9 +344,7 @@ function showNotification(message, type) {
 function addScrollToTopButton() {
   const scrollBtn = document.createElement("button");
   scrollBtn.innerHTML = '<i class="bi bi-arrow-up"></i>';
-  scrollBtn.className = "btn btn-primary position-fixed";
-  scrollBtn.style.cssText =
-    "bottom: 30px; right: 30px; z-index: 1000; border-radius: 50%; width: 50px; height: 50px; display: none;";
+  scrollBtn.className = "btn btn-primary scroll-top-btn";
   scrollBtn.setAttribute("aria-label", "Scroll to top");
 
   document.body.appendChild(scrollBtn);
