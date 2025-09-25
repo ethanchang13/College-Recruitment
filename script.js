@@ -5,6 +5,14 @@ document.addEventListener("DOMContentLoaded", function () {
   initFormValidation();
   addScrollToTopButton();
   initHeroEnhancements();
+
+  document.querySelectorAll('#mini-gallery img').forEach(img => {
+    img.addEventListener('error', () => {
+      img.style.opacity = '.35';
+      img.style.filter = 'grayscale(1)';
+      img.alt = (img.alt || 'image') + ' (missing)';
+    });
+  });
 });
 
 function initSmoothScrolling() {
@@ -203,11 +211,11 @@ function showProgramDetails(program) {
                             <h6 class="text-primary">Core Courses</h6>
                             <ul class="list-unstyled">
                                 ${data.courses
-                                  .map(
-                                    (course) =>
-                                      `<li><i class="bi bi-check-circle-fill text-success me-2"></i>${course}</li>`
-                                  )
-                                  .join("")}
+      .map(
+        (course) =>
+          `<li><i class="bi bi-check-circle-fill text-success me-2"></i>${course}</li>`
+      )
+      .join("")}
                             </ul>
                         </div>
                     </div>
