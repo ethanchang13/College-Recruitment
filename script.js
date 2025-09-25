@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
   addScrollToTopButton();
   initHeroEnhancements();
 
-  document.querySelectorAll('#mini-gallery img').forEach(img => {
-    img.addEventListener('error', () => {
-      img.style.opacity = '.35';
-      img.style.filter = 'grayscale(1)';
-      img.alt = (img.alt || 'image') + ' (missing)';
+  document.querySelectorAll("#mini-gallery img").forEach((img) => {
+    img.addEventListener("error", () => {
+      img.style.opacity = ".35";
+      img.style.filter = "grayscale(1)";
+      img.alt = (img.alt || "image") + " (missing)";
     });
   });
 });
@@ -211,11 +211,11 @@ function showProgramDetails(program) {
                             <h6 class="text-primary">Core Courses</h6>
                             <ul class="list-unstyled">
                                 ${data.courses
-      .map(
-        (course) =>
-          `<li><i class="bi bi-check-circle-fill text-success me-2"></i>${course}</li>`
-      )
-      .join("")}
+                                  .map(
+                                    (course) =>
+                                      `<li><i class="bi bi-check-circle-fill text-success me-2"></i>${course}</li>`
+                                  )
+                                  .join("")}
                             </ul>
                         </div>
                     </div>
@@ -395,44 +395,44 @@ function updateActiveNavLink() {
 updateActiveNavLink();
 
 function initHeroEnhancements() {
-  const scrollIndicator = document.querySelector('.hero-scroll-indicator');
-  const hero = document.querySelector('.hero-section');
+  const scrollIndicator = document.querySelector(".hero-scroll-indicator");
+  const hero = document.querySelector(".hero-section");
   if (scrollIndicator && hero) {
-    window.addEventListener('scroll', () => {
+    window.addEventListener("scroll", () => {
       const threshold = hero.offsetHeight * 0.3;
       if (window.scrollY > threshold) {
-        scrollIndicator.style.opacity = '0';
-        scrollIndicator.style.transform = 'translate(-50%, 10px) scale(0.7)';
+        scrollIndicator.style.opacity = "0";
+        scrollIndicator.style.transform = "translate(-50%, 10px) scale(0.7)";
       } else {
-        scrollIndicator.style.opacity = '1';
-        scrollIndicator.style.transform = 'translate(-50%, 0) scale(1)';
+        scrollIndicator.style.opacity = "1";
+        scrollIndicator.style.transform = "translate(-50%, 0) scale(1)";
       }
     });
   }
-  const heroContent = document.querySelector('.hero-content');
+  const heroContent = document.querySelector(".hero-content");
   if (heroContent) {
-    heroContent.style.opacity = '0';
-    heroContent.style.transform = 'translateY(40px)';
+    heroContent.style.opacity = "0";
+    heroContent.style.transform = "translateY(40px)";
     requestAnimationFrame(() => {
       setTimeout(() => {
-        heroContent.style.transition = 'all 1s cubic-bezier(.16,.8,.38,.98)';
-        heroContent.style.opacity = '1';
-        heroContent.style.transform = 'translateY(0)';
+        heroContent.style.transition = "all 1s cubic-bezier(.16,.8,.38,.98)";
+        heroContent.style.opacity = "1";
+        heroContent.style.transform = "translateY(0)";
       }, 80);
     });
   }
-  const glassTiles = document.querySelectorAll('.glass-tile');
+  const glassTiles = document.querySelectorAll(".glass-tile");
   glassTiles.forEach((tile) => {
-    tile.addEventListener('mousemove', (e) => {
+    tile.addEventListener("mousemove", (e) => {
       const rect = tile.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      tile.style.setProperty('--mx', x + 'px');
-      tile.style.setProperty('--my', y + 'px');
+      tile.style.setProperty("--mx", x + "px");
+      tile.style.setProperty("--my", y + "px");
       tile.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.9), rgba(255,255,255,0.55) 40%, rgba(255,255,255,0.4) 70%)`;
     });
-    tile.addEventListener('mouseleave', () => {
-      tile.style.background = 'rgba(255,255,255,0.7)';
+    tile.addEventListener("mouseleave", () => {
+      tile.style.background = "rgba(255,255,255,0.7)";
     });
   });
 }
