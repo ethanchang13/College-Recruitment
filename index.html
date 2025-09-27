@@ -2,28 +2,37 @@
 <html lang="en">
 
 <head>
+    <!-- Meta tags & document head resources -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Yale University - Light and Truth</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Site styles -->
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
+    <!-- Primary fixed navigation bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <div class="container">
+            <!-- Brand / Logo -->
             <a class="navbar-brand fw-bold" href="#home">
                 <img src="imgs/yale-bulldogs-logo.png" alt="Yale Bulldogs"
                     style="height: 40px; margin-right: 10px;">Yale
                 University
             </a>
+            <!-- Mobile menu toggle -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Nav links scroll to sections -->
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="#home">Home</a>
@@ -48,17 +57,20 @@
         </div>
     </nav>
 
+    <!-- Hero / landing section -->
     <section id="home" class="hero-section">
         <div class="hero-layer"></div>
         <div class="hero-noise"></div>
         <div class="container">
             <div class="hero-content">
+                <!-- Heritage badge -->
                 <div class="hero-badge mb-3">Founded 1701</div>
-                <h1 class="display-2 fw-bold text-white mb-3 gradient-title">Lux et Veritas</h1>
-                <p class="hero-subtitle text-white-75 mb-4">Light and Truth</p>
+                <h1 class="display-2 fw-bold text-white mb-3 gradient-title">Yale University</h1>
+                <p class="hero-subtitle text-white-75 mb-4">Lux et Veritas</p>
                 <p class="lead text-white mb-4">Join a legacy of scholarship, leadership, and impact spanning more than
                     three centuries. Discover a community that elevates ideas into action.</p>
                 <div class="hero-actions d-flex flex-wrap gap-3 justify-content-center">
+                    <!-- CTA buttons trigger JS smooth scroll / form -->
                     <button class="btn btn-light btn-lg px-4 shadow-sm" onclick="showPrograms()">Explore
                         Schools</button>
                     <button class="btn btn-outline-light btn-lg px-4" onclick="toggleApplicationForm()">Apply
@@ -66,9 +78,11 @@
                 </div>
             </div>
         </div>
+        <!-- Scroll indicator (animated) -->
         <div class="hero-scroll-indicator" onclick="showPrograms()"><span></span></div>
     </section>
 
+    <!-- About summary / feature highlights -->
     <section id="about" class="section section-alt">
         <div class="container">
             <div class="section-head text-center mx-auto">
@@ -105,6 +119,7 @@
         </div>
     </section>
 
+    <!-- Academic programs cards -->
     <section id="programs" class="section">
         <div class="container">
             <div class="section-head text-center mx-auto mb-5">
@@ -113,6 +128,7 @@
                     Yale's schools.</p>
             </div>
             <div class="row g-4" id="programs-container">
+                <!-- Individual program card: Yale College -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card h-100 program-card">
                         <div class="card-body">
@@ -144,6 +160,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Individual program card: School of Medicine -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card h-100 program-card">
                         <div class="card-body">
@@ -175,6 +192,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Individual program card: School of Management -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card h-100 program-card">
                         <div class="card-body">
@@ -210,6 +228,7 @@
         </div>
     </section>
 
+    <!-- Campus life & housing -->
     <section id="student-life" class="section section-alt">
         <div class="container">
             <div class="section-head text-center mx-auto mb-5">
@@ -219,6 +238,7 @@
             </div>
             <div class="row g-4">
                 <div class="col-lg-6">
+                    <!-- Visual block: architecture image background -->
                     <div class="student-life-item visual-block image-architecture">
                         <h4>Historic Gothic Architecture</h4>
                         <p class="section-text">Beautiful collegiate Gothic buildings, world-class libraries, and
@@ -226,6 +246,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
+                    <!-- Visual block: organizations image background -->
                     <div class="student-life-item visual-block image-organizations">
                         <h4>Student Organizations</h4>
                         <p class="section-text">Join 500+ student organizations: debate, cultural, service, innovation,
@@ -235,6 +256,7 @@
             </div>
             <div class="row mt-5">
                 <div class="col-lg-12">
+                    <!-- Housing cost quick reference -->
                     <div class="housing-section p-4 bg-white rounded shadow-sm">
                         <h4 class="mb-3">Housing Options</h4>
                         <div class="row">
@@ -257,6 +279,7 @@
         </div>
     </section>
 
+    <!-- Tuition & financial aid overview -->
     <section id="financial-aid" class="section">
         <div class="container">
             <div class="section-head text-center mx-auto mb-5">
@@ -266,6 +289,7 @@
             </div>
             <div class="row g-4">
                 <div class="col-lg-6">
+                    <!-- Tuition focus card -->
                     <div class="card h-100 financial-card financial-focus">
                         <div class="card-body">
                             <h5 class="card-title">Tuition & Fees</h5>
@@ -282,6 +306,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
+                    <!-- Financial aid options listing -->
                     <div class="card h-100 financial-card">
                         <div class="card-body">
                             <h5 class="card-title">Financial Aid Options</h5>
@@ -320,6 +345,7 @@
         </div>
     </section>
 
+    <!-- Alumni outcomes & stats -->
     <section id="alumni" class="section section-accent text-white">
         <div class="container">
             <div class="section-head text-center mx-auto mb-5">
@@ -327,7 +353,7 @@
                 <p class="lead text-white-75 max-w-2">Graduates lead across government, academia, industry, media, the
                     arts, and global civil society.</p>
             </div>
-            <!-- Restored mini gallery -->
+            <!-- Mini gallery of campus imagery -->
             <div class="row g-3 mb-5" id="mini-gallery">
                 <div class="col-6 col-md-3">
                     <figure class="mini-shot"><img src="imgs/gallery-campus-green.jpg" alt="Campus green lawn"
@@ -348,6 +374,7 @@
             </div>
             <div class="row g-4">
                 <div class="col-lg-4">
+                    <!-- Alumni profile card -->
                     <div class="alumni-card text-center">
                         <div class="alumni-avatar bg-yale-blue text-white rounded-circle d-flex align-items-center justify-content-center mb-3"
                             style="width: 100px; height: 100px; font-size: 2rem; font-weight: bold;">GB</div>
@@ -357,6 +384,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
+                    <!-- Alumni profile card -->
                     <div class="alumni-card text-center">
                         <div class="alumni-avatar bg-yale-blue text-white rounded-circle d-flex align-items-center justify-content-center mb-3"
                             style="width: 100px; height: 100px; font-size: 2rem; font-weight: bold;">MS</div>
@@ -366,6 +394,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
+                    <!-- Alumni profile card -->
                     <div class="alumni-card text-center">
                         <div class="alumni-avatar bg-yale-blue text-white rounded-circle d-flex align-items-center justify-content-center mb-3"
                             style="width: 100px; height: 100px; font-size: 2rem; font-weight: bold;">AC</div>
@@ -398,10 +427,11 @@
                         </div>
                         <div class="row mt-4">
                             <div class="col-lg-12">
+                                <!-- Career outcomes quick stats -->
                                 <h5 class="section-heading">Industry Partnerships & Career Outcomes</h5>
-                                <p class="section-text">Yale partners with leading organizations including Goldman
-                                    Sachs, McKinsey &
-                                    Company, Google, Microsoft, Johnson & Johnson, and major government agencies.</p>
+                                <p class="section-text">Yale partners with leading organizations such as Goldman Sachs,
+                                    McKinsey & Company, Google, Microsoft, Johnson & Johnson, and major government
+                                    agencies.</p>
                                 <div class="row mt-3">
                                     <div class="col-md-4 text-center">
                                         <h6 class="fw-bold text-primary">96%</h6>
@@ -424,6 +454,7 @@
         </div>
     </section>
 
+    <!-- Contact & quick application section -->
     <section id="contact" class="section section-alt">
         <div class="container">
             <div class="section-head text-center mx-auto mb-5">
@@ -433,6 +464,7 @@
             </div>
             <div class="row g-4 align-items-stretch">
                 <div class="col-lg-5 d-flex">
+                    <!-- Contact info panel -->
                     <div class="contact-panel w-100">
                         <div class="contact-block">
                             <div class="icon"><i class="bi bi-geo-alt-fill"></i></div>
@@ -463,6 +495,7 @@
                     </div>
                 </div>
                 <div class="col-lg-7 d-flex">
+                    <!-- Application form / placeholder dual panel -->
                     <div class="form-panel w-100">
                         <div id="application-form" class="application-form" style="display:none;">
                             <h5 class="mb-3">Quick Application</h5>
@@ -489,12 +522,12 @@
                             </form>
                         </div>
                         <div class="application-placeholder" id="application-placeholder">
+                            <!-- Placeholder shown until form opened -->
                             <div class="placeholder-inner">
                                 <div class="placeholder-badge">Preview</div>
                                 <h5 class="mb-3">Express Interest</h5>
-                                <p class="small mb-4">Open the quick application panel to submit basic interest details
-                                    for
-                                    follow-up context simulation.</p>
+                                <p class="small mb-4">Open the quick application panel to share your basic details and
+                                    express interest for follow-up.</p>
                                 <button class="btn btn-outline-primary w-100"
                                     onclick="toggleApplicationForm()">Begin</button>
                             </div>
@@ -505,6 +538,7 @@
         </div>
     </section>
 
+    <!-- Footer with social links -->
     <footer class="bg-dark text-white py-4">
         <div class="container">
             <div class="row">
@@ -521,9 +555,11 @@
         </div>
     </footer>
 
+    <!-- Vendor JS (Bootstrap bundle) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+    <!-- Site scripts -->
     <script src="script.js"></script>
 </body>
 
