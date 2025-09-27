@@ -1,18 +1,17 @@
 // Run initializers once the DOM is fully parsed
 document.addEventListener("DOMContentLoaded", function () {
-  initSmoothScrolling();      // enable smooth scroll for nav links
-  initScrollAnimations();     // fade-in / intersection observer animations
-  initNavbarScroll();         // dynamic navbar background on scroll
-  initFormValidation();       // set up quick application form submission handling
-  addScrollToTopButton();     // add floating back-to-top button
-  initHeroEnhancements();     // hero animations & interactive tiles
+  initSmoothScrolling();
+  initScrollAnimations();
+  initNavbarScroll();
+  initFormValidation();
+  addScrollToTopButton();
+  initHeroEnhancements();
 
-  // Gracefully handle any broken images in mini gallery
-  document.querySelectorAll("#mini-gallery img").forEach((img) => {
-    img.addEventListener("error", () => {
-      img.style.opacity = ".35";          // fade broken image
-      img.style.filter = "grayscale(1)";  // visually indicate issue
-      img.alt = (img.alt || "image") + " (missing)"; // update alt text
+  document.querySelectorAll('#mini-gallery img').forEach(img => {
+    img.addEventListener('error', () => {
+      img.style.opacity = '.35';
+      img.style.filter = 'grayscale(1)';
+      img.alt = (img.alt || 'image') + ' (missing)';
     });
   });
 });
@@ -199,11 +198,11 @@ function showProgramDetails(program) {
                             <h6 class="text-primary">Core Courses</h6>
                             <ul class="list-unstyled">
                                 ${data.courses
-      .map(
-        (course) =>
-          `<li><i class="bi bi-check-circle-fill text-success me-2"></i>${course}</li>`
-      )
-      .join("")}
+                                  .map(
+                                    (course) =>
+                                      `<li><i class="bi bi-check-circle-fill text-success me-2"></i>${course}</li>`
+                                  )
+                                  .join("")}
                             </ul>
                         </div>
                     </div>
@@ -360,8 +359,8 @@ function initHeroEnhancements() {
   const scrollIndicator = document.querySelector(".hero-scroll-indicator");
   const hero = document.querySelector(".hero-section");
   if (scrollIndicator && hero) {
-    window.addEventListener("scroll", () => {
-      const threshold = hero.offsetHeight * 0.3; // fade indicator after 30% scroll
+    window.addEventListener('scroll', () => {
+      const threshold = hero.offsetHeight * 0.3;
       if (window.scrollY > threshold) {
         scrollIndicator.style.opacity = "0";
         scrollIndicator.style.transform = "translate(-50%, 10px) scale(0.7)";
@@ -371,8 +370,7 @@ function initHeroEnhancements() {
       }
     });
   }
-  // Intro animation for hero content
-  const heroContent = document.querySelector(".hero-content");
+  const heroContent = document.querySelector('.hero-content');
   if (heroContent) {
     heroContent.style.opacity = "0";
     heroContent.style.transform = "translateY(40px)";
@@ -384,8 +382,7 @@ function initHeroEnhancements() {
       }, 80);
     });
   }
-  // Interactive gradient following cursor on feature tiles
-  const glassTiles = document.querySelectorAll(".glass-tile");
+  const glassTiles = document.querySelectorAll('.glass-tile');
   glassTiles.forEach((tile) => {
     tile.addEventListener("mousemove", (e) => {
       const rect = tile.getBoundingClientRect();
@@ -395,8 +392,8 @@ function initHeroEnhancements() {
       tile.style.setProperty("--my", y + "px");
       tile.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.9), rgba(255,255,255,0.55) 40%, rgba(255,255,255,0.4) 70%)`;
     });
-    tile.addEventListener("mouseleave", () => {
-      tile.style.background = "rgba(255,255,255,0.7)"; // reset background
+    tile.addEventListener('mouseleave', () => {
+      tile.style.background = 'rgba(255,255,255,0.7)';
     });
   });
 }
